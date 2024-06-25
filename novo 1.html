@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ccstore</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+        #copyText {
+            color: limegreen;
+            font-size: 2em;
+            cursor: pointer;
+            font-family: 'Impact', sans-serif;
+            text-shadow: 
+                -1px -1px 0 white,  
+                 1px -1px 0 white,
+                -1px  1px 0 white,
+                 1px  1px 0 white;
+        }
+        #instruction {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="instruction">Click the text below to copy it:</div>
+    <div id="copyText">ccstore</div>
+    <script>
+        document.getElementById("copyText").onclick = function() {
+            var text = "ccstore";
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Text "ccstore" copied to clipboard!');
+            }, function() {
+                alert('Failed to copy the text.');
+            });
+        };
+    </script>
+</body>
+</html>
